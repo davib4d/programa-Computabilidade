@@ -5,9 +5,9 @@
 
 ## Integrantes
 
-**Davi Maciel Corrêa**
-**Gabriel Alencar Albuquerque**
-**Alberto Eduardo Acosta**
+**Davi Maciel Corrêa** |
+**Gabriel Albuquerque Alencar** |
+**Alberto Eduardo Acosta** |
 
 ---
 
@@ -163,5 +163,5 @@ Os estados de memória nunca voltam a coincidir, mesmo que a saída final (S = 6
 ---
 
 ## Uso de Inteligência Artificial
-Claude: Apoio à estruturação do README, principalmente apoio na implementação código da Máquina de Traços, ajudou apenas estruturalmente com comentários e identação dos códigos em geral.
+Claude: Apoio à estruturação do README, principalmente apoio na implementação código da Máquina de Traços, ajudou apenas estruturalmente com comentários e identação dos códigos em geral. |
 Gamma: Uso para apresentação de slides melhor estruturada
