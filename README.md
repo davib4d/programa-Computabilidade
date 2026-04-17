@@ -33,12 +33,12 @@ A função foi escolhida por ser simples o bastante para gerar traços legíveis
 
 ## Linguagens utilizadas
 
-| Componente          | Linguagem |
-|---------------------|-----------|
-| Programa monolítico | C (gcc)   |
-| Programa iterativo  | Python 3  |
-| Programa recursivo  | Python 3  |
-| Máquina de Traços   | Python 3  |
+| Componente          | Linguagem               |
+|---------------------|-------------------------|
+| Programa monolítico | C (gcc) e Assembly (GAS) |
+| Programa iterativo  | Python 3                |
+| Programa recursivo  | Python 3                |
+| Máquina de Traços   | Python 3                |
 
 ---
 
@@ -48,8 +48,9 @@ A função foi escolhida por ser simples o bastante para gerar traços legíveis
 .
 ├── README.md
 ├── monolitico/
-│   └── soma.c              programa monolítico com goto; labels correspondem
-│                           exatamente aos rótulos da notação formal
+│   ├── soma.c              programa monolítico com goto; labels correspondem
+│   │                       exatamente aos rótulos da notação formal
+│   └── soma.s              mesma logica em Assembly (labels iguais aos rotulos)
 ├── iterativo/
 │   └── soma.py             programa iterativo (while explícito)
 ├── recursivo/
@@ -74,6 +75,15 @@ A função foi escolhida por ser simples o bastante para gerar traços legíveis
 ```bash
 gcc -o monolitico/soma monolitico/soma.c
 ./monolitico/soma
+# >> Informe N: 5
+# >> soma(1..5) = 15
+```
+
+### Programa monolítico (Assembly)
+
+```bash
+gcc -o monolitico/soma_asm monolitico/soma.s
+./monolitico/soma_asm
 # >> Informe N: 5
 # >> soma(1..5) = 15
 ```
@@ -124,6 +134,13 @@ Usa apenas `goto` e labels — sem `while`, `for` ou funções. Cada label numer
 3: se I > N → 7   4: S := S + I
 5: I := I + 1     6: vá para 3    7: halt
 ```
+
+### Monolítico em Assembly (`monolitico/soma.s`)
+
+Repete a mesma sequencia de rotulos da versao em C, usando apenas saltos
+(`jmp`/`jg`) e atribuicoes diretas em memoria. Isso deixa a explicacao
+paralela ao programa formal: cada `rotulo` corresponde a um passo da notacao
+da Maquina de Tracos.
 
 ### Iterativo (`iterativo/soma.py`)
 
